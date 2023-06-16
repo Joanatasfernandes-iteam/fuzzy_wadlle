@@ -76,4 +76,27 @@ public class FieldTest {
         });
     }
 
+    @Test
+    void testOpenWithNeighbord1() {
+        Field neighbordOf1 = new Field(1, 1);
+        Field neighbord1 = new Field(2, 2);
+        neighbord1.addNeigbor(neighbordOf1);
+        field.open();
+        assertTrue(neighbordOf1.isOpen() && neighbord1.isOpen());
+    }
+
+    @Test
+    void testOpenWithNeighbord2() {
+        Field neighbord11 = new Field(1, 1);
+        Field neighbord12 = new Field(1, 1);
+        neighbord12.toMine();
+
+        Field neighbord22 = new Field(2, 2);
+        neighbord22.addNeigbor(neighbord11);
+        neighbord22.addNeigbor(neighbord12);
+
+        field.addNeigbor(neighbord22);
+        field.open();
+        assertTrue(neighbord22.isOpen() && neighbord11.isClosed());
+    }
 }

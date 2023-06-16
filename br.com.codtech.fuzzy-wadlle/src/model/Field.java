@@ -73,4 +73,58 @@ public class Field {
     public boolean isMarked() {
         return marked;
     }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public boolean isClosed() {
+        return !isOpen();
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line = line;
+    }
+
+    public int getColun() {
+        return colun;
+    }
+
+    public void setColun(int colun) {
+        this.colun = colun;
+    }
+
+    public boolean objetiveSucces() {
+        boolean unraveled = !mineField && open;
+        boolean protect = mineField && marked;
+        return unraveled || protect;
+    }
+
+    public long mineOfNeighbor() {
+        return neighbors.stream().filter(v -> v.mineField).count();
+    }
+
+    public void restart() {
+        open = false;
+        mineField = false;
+        marked = false;
+    }
+
+    public String toString() {
+        if (marked) {
+            return "X";
+        } else if (open && mineField) {
+            return "*";
+        } else if (open && mineOfNeighbor() > 0) {
+            return Long.toString(mineOfNeighbor());
+        } else if (open) {
+            return " ";
+        } else {
+            return "?";
+        }
+    }
 }
