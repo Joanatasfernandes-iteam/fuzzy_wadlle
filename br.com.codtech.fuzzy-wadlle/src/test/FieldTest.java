@@ -108,4 +108,5 @@ public class FieldTest {
         field.open();
         assertTrue(neighbord22.isOpen() && neighbord11.isClosed());
     }
+    // Creat test for Board
 }
