@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0372f1d-4e60-4376-9c42-eacf29dbb3ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/test/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/test/FieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
     "settings.editor.selected.configurable": "settings.saveactions"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.FieldTest.testOpenWithNeighbord2">
+  <component name="RunManager" selected="JUnit.FieldTest.testOpenWithNeighbord3">
     <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzzy_wadlle" />
       <extension name="coverage">
@@ -59,22 +58,6 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FieldTest.testAlterMarkedIsFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fuzzy_wadlle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
-      <option name="METHOD_NAME" value="testAlterMarkedIsFalse" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,13 +110,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FieldTest.testOpenWithNeighbord3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzzy_wadlle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
+      <option name="METHOD_NAME" value="testOpenWithNeighbord3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FieldTest.testOpenWithNeighbord3" />
         <item itemvalue="JUnit.FieldTest.testOpenWithNeighbord2" />
         <item itemvalue="JUnit.FieldTest.testOpenMineFieldAndNoMarked" />
         <item itemvalue="JUnit.FieldTest" />
         <item itemvalue="JUnit.FieldTest.testOpenMineFieldMarked" />
-        <item itemvalue="JUnit.FieldTest.testAlterMarkedIsFalse" />
       </list>
     </recent_temporary>
   </component>

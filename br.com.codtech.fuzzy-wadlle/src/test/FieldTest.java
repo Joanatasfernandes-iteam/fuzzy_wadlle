@@ -86,6 +86,15 @@ public class FieldTest {
     }
 
     @Test
+    void testOpenWithNeighbord3() {
+        Field neighbordOf1 = new Field(2, 2);
+        Field neighbord1 = new Field(2, 2);
+        neighbord1.addNeigbor(neighbordOf1);
+        field.open();
+        assertFalse(neighbordOf1.isOpen() && neighbord1.isOpen());
+    }
+
+    @Test
     void testOpenWithNeighbord2() {
         Field neighbord11 = new Field(1, 1);
         Field neighbord12 = new Field(1, 1);
