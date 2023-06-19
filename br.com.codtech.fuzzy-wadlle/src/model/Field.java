@@ -1,6 +1,6 @@
 package model;
 
-import esception.ExceptionExplosed;
+import exception.ExceptionExplosed;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +70,10 @@ public class Field {
         return neighbors.stream().noneMatch(v -> v.mineField);
     }
 
+    public boolean isMineField() {
+        return mineField;
+    }
+
     public boolean isMarked() {
         return marked;
     }
@@ -98,7 +102,7 @@ public class Field {
         this.colun = colun;
     }
 
-    public boolean objetiveSucces() {
+    boolean objetiveSucces() {
         boolean unraveled = !mineField && open;
         boolean protect = mineField && marked;
         return unraveled || protect;
