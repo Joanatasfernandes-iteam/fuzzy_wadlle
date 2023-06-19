@@ -1,5 +1,7 @@
 package model;
 
+import exception.ExceptionExplosed;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -19,14 +21,31 @@ public class Board {
         sortedMines();
     }
 
+    public void open(int line, int colun) {
+        try {
+            fields.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
+                    .findFirst()
+                    .ifPresent(Field::open);
+        } catch (ExceptionExplosed e) {
+            fields.forEach(field -> field.setOpen(true));
+            throw e;
+        }
+    }
+
+    public void alternatMarked(int line, int colun) {
+        fields.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
+                .findFirst()
+                .ifPresent(Field::alternatMarked);
+    }
+
     private void sortedMines() {
         long minesArmed = 0;
         Predicate<Field> undermined = Field::isMineField;
 
         do {
-            minesArmed = fields.stream().filter(undermined).count();
             int sorted = (int) (Math.random() * fields.size());
             fields.get(sorted).toMine();
+            minesArmed = fields.stream().filter(undermined).count();
         } while (minesArmed < mines);
     }
 
@@ -53,5 +72,32 @@ public class Board {
                 fields.add(new Field(line, colun));
             }
         }
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("  ");
+        for (int colun = 0; colun < coluns; colun++) {
+            stringBuilder.append(" ");
+            stringBuilder.append(colun);
+            stringBuilder.append(" ");
+        }
+        stringBuilder.append("\n");
+
+        int aux = 0;
+        for (int line = 0; line < lines; line++) {
+            stringBuilder.append(line);
+            stringBuilder.append(" ");
+            for (int colun = 0; colun < coluns; colun++) {
+                fields.add(new Field(line, colun));
+                stringBuilder.append(" ");
+                stringBuilder.append(fields.get(aux));
+                stringBuilder.append(" ");
+                aux++;
+            }
+            stringBuilder.append("\n");
+        }
+
+        return stringBuilder.toString();
     }
 }

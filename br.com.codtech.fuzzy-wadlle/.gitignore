@@ -1,10 +1,24 @@
-### IntelliJ IDEA ###
-.idea/
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+### Gradle ###
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+!**/actions/build/**
+!**/actions/docker/build**
+gen/
 
 ### Eclipse ###
+*.ctxt
+.eclipse
+.settings
+.project
+.classpath
+.factorypath
+bin/
+
+### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -12,9 +26,13 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
 
 ### NetBeans ###
 /nbproject/private/
@@ -24,7 +42,12 @@ bin/
 /.nb-gradle/
 
 ### VS Code ###
-.vscode/
+.vscode
 
-### Mac OS ###
+### OS Generated Files ###
 .DS_Store
+Thumbs.db
+*.orig
+*.tmp
+*.bak
+*.swp

@@ -82,6 +82,10 @@ public class Field {
         return open;
     }
 
+    void setOpen(boolean open) {
+        this.open = open;
+    }
+
     public boolean isClosed() {
         return !isOpen();
     }
