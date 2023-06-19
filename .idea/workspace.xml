@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0372f1d-4e60-4376-9c42-eacf29dbb3ce" name="Changes" comment="" />
+    <list default="true" id="d0372f1d-4e60-4376-9c42-eacf29dbb3ce" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/vision/BoardTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/vision/BoardTerminal.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

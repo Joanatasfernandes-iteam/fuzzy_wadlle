@@ -77,6 +77,7 @@ public class Board {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("  ");
+
         for (int colun = 0; colun < coluns; colun++) {
             stringBuilder.append(" ");
             stringBuilder.append(colun);
@@ -88,6 +89,7 @@ public class Board {
         for (int line = 0; line < lines; line++) {
             stringBuilder.append(line);
             stringBuilder.append(" ");
+
             for (int colun = 0; colun < coluns; colun++) {
                 fields.add(new Field(line, colun));
                 stringBuilder.append(" ");

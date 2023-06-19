@@ -24,6 +24,7 @@ public class BoardTerminal {
                 gameCicle();
                 System.out.println("Do you play again? (S/n) ");
                 String answer = scanner.nextLine();
+
                 if ("n".equalsIgnoreCase(answer)) {
                     toBeContinue = false;
                 } else {
@@ -40,14 +41,18 @@ public class BoardTerminal {
     private void gameCicle() {
         try {
             while (!board.objetiveSucces()) {
+
                 System.out.println(board);
                 String digit = captureValueIn(" Insert ( X, Y): ");
                 Iterator<Integer> xy = Arrays.stream(digit.split(","))
                         .map(e -> Integer.parseInt(e.trim()))
                         .iterator();
+
                 digit = captureValueIn("1 open or 2 (Mark off) to marked");
+
                 if ("1".equalsIgnoreCase(digit)) {
                     board.open(xy.next(), xy.next());
+
                 } else if ("2".equalsIgnoreCase(digit)) {
                     board.open(xy.next(), xy.next());
                 }
@@ -63,6 +68,7 @@ public class BoardTerminal {
     private String captureValueIn(String value) {
         System.out.println(value);
         String digiteIn = scanner.nextLine();
+
         if ("exit".equalsIgnoreCase(digiteIn)) {
             throw new ExitException();
         }
