@@ -1,6 +1,6 @@
 package test;
 
-import esception.ExceptionExplosed;
+import exception.ExceptionExplosed;
 import model.Field;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

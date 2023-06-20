@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0372f1d-4e60-4376-9c42-eacf29dbb3ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/test/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/test/FieldTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/ChegadaAniversarianteObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/EventChegadaAniversariante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/FestaSurpresa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/Namorada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/Porteiro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/swing/Observador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/fuzzy-wadlle-swing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/model/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fuzzy_wadlle/model/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/vision/BoardTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fuzzy_wadlle/vision/BoardTerminal.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,59 +59,51 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "CM-inicio-fuzzy",
-    "last_opened_file_path": "C:/Users/Joanatas.Fernandes/Estudos/fuzzy_wadlle",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Joanatas.Fernandes/Estudos/fuzzy_wadlle/br.com.codTech.fuzzy-wadlle.observer",
     "settings.editor.selected.configurable": "settings.saveactions"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.FieldTest.testOpenWithNeighbord3">
-    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Joanatas.Fernandes\Estudos\fuzzy_wadlle\br.com.codTech.fuzzy-wadlle.observer" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Observador">
+    <configuration name="Aplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Aplication" />
       <module name="fuzzy_wadlle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.testOpenMineFieldAndNoMarked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FestaSurpresa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dafault.observer.FestaSurpresa" />
       <module name="fuzzy_wadlle" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="dafault.observer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
-      <option name="METHOD_NAME" value="testOpenMineFieldAndNoMarked" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.testOpenMineFieldMarked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Observador" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swing.Observador" />
       <module name="fuzzy_wadlle" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="swing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
-      <option name="METHOD_NAME" value="testOpenMineFieldMarked" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.testOpenWithNeighbord2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldTest.testOpenNoMineFieldNoMarked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzzy_wadlle" />
       <extension name="coverage">
         <pattern>
@@ -104,23 +113,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
-      <option name="METHOD_NAME" value="testOpenWithNeighbord2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FieldTest.testOpenWithNeighbord3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fuzzy_wadlle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.FieldTest" />
-      <option name="METHOD_NAME" value="testOpenWithNeighbord3" />
+      <option name="METHOD_NAME" value="testOpenNoMineFieldNoMarked" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,11 +121,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FieldTest.testOpenWithNeighbord3" />
-        <item itemvalue="JUnit.FieldTest.testOpenWithNeighbord2" />
-        <item itemvalue="JUnit.FieldTest.testOpenMineFieldAndNoMarked" />
-        <item itemvalue="JUnit.FieldTest" />
-        <item itemvalue="JUnit.FieldTest.testOpenMineFieldMarked" />
+        <item itemvalue="Application.Observador" />
+        <item itemvalue="Application.FestaSurpresa" />
+        <item itemvalue="Application.Aplication" />
+        <item itemvalue="JUnit.FieldTest.testOpenNoMineFieldNoMarked" />
       </list>
     </recent_temporary>
   </component>
