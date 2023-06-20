@@ -1,9 +1,9 @@
 package model;
 
-import exception.ExceptionExplosed;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 
 public class Field {
     public Field(int line, int colun) {
@@ -17,7 +17,17 @@ public class Field {
     private boolean open;
     private boolean marked;
 
-    private final List<Field> neighbors = new ArrayList<>();
+    private List<Field> neighbors = new ArrayList<>();
+    private List<FieldListener> eventList = new ArrayList<>();
+    //private List<BiConsumer<Field, FieldEvent>> consumerList = new ArrayList<>();
+
+    public void registerListeners(FieldListener event){
+        eventList.add(event);
+    }
+
+    private void notify(FieldEvent event){
+        eventList.stream().forEach(listener -> listener.eventListner(this, event ));
+    }
 
 
     public boolean addNeigbor(Field neighbor) {
@@ -43,6 +53,11 @@ public class Field {
     public void alternatMarked() {
         if (!open) {
             marked = !marked;
+            if (marked){
+                notify(FieldEvent.MARKED);
+            }else {
+                notify(FieldEvent.MARK_OFF);
+            }
         }
     }
 
@@ -54,9 +69,10 @@ public class Field {
         if (!open && !marked) {
             open = true;
             if (mineField) {
-                throw new ExceptionExplosed();
+                notify(FieldEvent.TO_EXPLOSE);
+                return true;
             }
-
+            setOpen(true);
             if (safeNeighbord()) {
                 neighbors.forEach(v -> v.open());
             }
@@ -84,6 +100,9 @@ public class Field {
 
     void setOpen(boolean open) {
         this.open = open;
+        if (open){
+            notify(FieldEvent.OPEN);
+        }
     }
 
     public boolean isClosed() {
@@ -122,17 +141,4 @@ public class Field {
         marked = false;
     }
 
-    public String toString() {
-        if (marked) {
-            return "X";
-        } else if (open && mineField) {
-            return "*";
-        } else if (open && mineOfNeighbor() > 0) {
-            return Long.toString(mineOfNeighbor());
-        } else if (open) {
-            return " ";
-        } else {
-            return "?";
-        }
-    }
 }

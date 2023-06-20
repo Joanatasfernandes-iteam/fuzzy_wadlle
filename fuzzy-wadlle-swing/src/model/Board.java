@@ -1,12 +1,11 @@
 package model;
 
-import exception.ExceptionExplosed;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Board {
+public class Board  implements FieldListener{
     private int lines;
     private int coluns;
     private int mines;
@@ -26,7 +25,8 @@ public class Board {
             fields.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
                     .findFirst()
                     .ifPresent(Field::open);
-        } catch (ExceptionExplosed e) {
+        } catch (Exception e) {
+            //TODO Ajusta a implementação do metodo abri.
             fields.forEach(field -> field.setOpen(true));
             throw e;
         }
@@ -69,37 +69,19 @@ public class Board {
     private void generatedBoard() {
         for (int line = 0; line < lines; line++) {
             for (int colun = 0; colun < coluns; colun++) {
+                Field field = new Field(line, colun);
+                field.registerListeners(this);
                 fields.add(new Field(line, colun));
             }
         }
     }
 
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("  ");
-
-        for (int colun = 0; colun < coluns; colun++) {
-            stringBuilder.append(" ");
-            stringBuilder.append(colun);
-            stringBuilder.append(" ");
+    @Override
+    public void eventListner(Field field, FieldEvent event) {
+        if (event == FieldEvent.TO_EXPLOSE){
+            System.out.println("You lose!!! :(");
+        }else if (objetiveSucces()){
+            System.out.println("You Win!!! :)");
         }
-        stringBuilder.append("\n");
-
-        int aux = 0;
-        for (int line = 0; line < lines; line++) {
-            stringBuilder.append(line);
-            stringBuilder.append(" ");
-
-            for (int colun = 0; colun < coluns; colun++) {
-                fields.add(new Field(line, colun));
-                stringBuilder.append(" ");
-                stringBuilder.append(fields.get(aux));
-                stringBuilder.append(" ");
-                aux++;
-            }
-            stringBuilder.append("\n");
-        }
-
-        return stringBuilder.toString();
     }
 }
