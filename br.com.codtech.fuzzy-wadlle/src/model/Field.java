@@ -1,9 +1,8 @@
 package model;
 
-import exception.ExceptionExplosed;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 
 public class Field {
     public Field(int line, int colun) {
@@ -17,8 +16,17 @@ public class Field {
     private boolean open;
     private boolean marked;
 
-    private final List<Field> neighbors = new ArrayList<>();
+    private List<Field> neighbors = new ArrayList<>();
+    private List<CampoObservador> observadors = new ArrayList<>();
+    private List<BiConsumer<Field, CampoEvento>> consumers = new ArrayList<>();
 
+    public void resgistrarObservador(CampoObservador observador) {
+        observadors.add(observador);
+    }
+
+    private void notificarObeservadores(CampoEvento evento) {
+        observadors.stream().forEach(o -> o.eventoOcorreu(this, evento));
+    }
 
     public boolean addNeigbor(Field neighbor) {
         boolean diferentnLine = line != neighbor.line;
@@ -43,6 +51,11 @@ public class Field {
     public void alternatMarked() {
         if (!open) {
             marked = !marked;
+            if (marked) {
+                notificarObeservadores(CampoEvento.MARCAR);
+            } else {
+                notificarObeservadores(CampoEvento.DESMARCAR);
+            }
         }
     }
 
@@ -52,11 +65,12 @@ public class Field {
 
     public boolean open() {
         if (!open && !marked) {
-            open = true;
-            if (mineField) {
-                throw new ExceptionExplosed();
-            }
 
+            if (mineField) {
+                notificarObeservadores(CampoEvento.EXPLODIR);
+                return true;
+            }
+            setOpen(true);
             if (safeNeighbord()) {
                 neighbors.forEach(v -> v.open());
             }
@@ -75,7 +89,7 @@ public class Field {
     }
 
     public boolean isMarked() {
-        return marked;
+        return marked = true;
     }
 
     public boolean isOpen() {
@@ -84,6 +98,9 @@ public class Field {
 
     void setOpen(boolean open) {
         this.open = open;
+        if (open) {
+            notificarObeservadores(CampoEvento.ABRI);
+        }
     }
 
     public boolean isClosed() {
@@ -122,7 +139,7 @@ public class Field {
         marked = false;
     }
 
-    public String toString() {
+ /*   public String toString() {
         if (marked) {
             return "X";
         } else if (open && mineField) {
@@ -134,5 +151,5 @@ public class Field {
         } else {
             return "?";
         }
-    }
+    }*/
 }

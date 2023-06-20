@@ -1,12 +1,10 @@
 package model;
 
-import exception.ExceptionExplosed;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Board {
+public class Board implements CampoObservador {
     private int lines;
     private int coluns;
     private int mines;
@@ -26,7 +24,8 @@ public class Board {
             fields.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
                     .findFirst()
                     .ifPresent(Field::open);
-        } catch (ExceptionExplosed e) {
+        } catch (Exception e) {
+            //FIXme
             fields.forEach(field -> field.setOpen(true));
             throw e;
         }
@@ -69,12 +68,25 @@ public class Board {
     private void generatedBoard() {
         for (int line = 0; line < lines; line++) {
             for (int colun = 0; colun < coluns; colun++) {
-                fields.add(new Field(line, colun));
+                Field campo = new Field(line, colun);
+                campo.resgistrarObservador(this);
+                fields.add(campo);
             }
         }
     }
 
-    public String toString() {
+    @Override
+    public void eventoOcorreu(Field campo, CampoEvento evento) {
+        if (evento == CampoEvento.EXPLODIR) {
+            System.out.println("Perdeu....:(");
+        } else {
+            if (objetiveSucces()) {
+                System.out.println("Ganhou....:)");
+            }
+        }
+    }
+
+    /*public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("  ");
 
@@ -101,5 +113,5 @@ public class Board {
         }
 
         return stringBuilder.toString();
-    }
+    }*/
 }

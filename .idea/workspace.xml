@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0372f1d-4e60-4376-9c42-eacf29dbb3ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/ChegadaAniversarianteObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/EventChegadaAniversariante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/FestaSurpresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/Namorada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/dafault/observer/Porteiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/swing/Observador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzy-wadlle-swing/fuzzy-wadlle-swing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/CampoEvento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/CampoObservador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/model/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fuzzy_wadlle/model/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/Aplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/exception/ExceptionExplosed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/exception/ExitException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/model/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br.com.codtech.fuzzy-wadlle/src/vision/BoardTerminal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/esception/ExceptionExplosed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/model/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fuzzy_wadlle/model/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/swing/Observador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fuzzy_wadlle/swing/Observador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/fuzzy_wadlle/vision/BoardTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fuzzy_wadlle/vision/BoardTerminal.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -58,10 +57,10 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "CM-inicio-fuzzy",
+    "git-widget-placeholder": "FC-add-swing",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/Joanatas.Fernandes/Estudos/fuzzy_wadlle/br.com.codTech.fuzzy-wadlle.observer",
-    "settings.editor.selected.configurable": "settings.saveactions"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -69,7 +68,7 @@
       <recent name="C:\Users\Joanatas.Fernandes\Estudos\fuzzy_wadlle\br.com.codTech.fuzzy-wadlle.observer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Observador">
+  <component name="RunManager" selected="Application.Aplication">
     <configuration name="Aplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Aplication" />
       <module name="fuzzy_wadlle" />
@@ -121,9 +120,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Aplication" />
         <item itemvalue="Application.Observador" />
         <item itemvalue="Application.FestaSurpresa" />
-        <item itemvalue="Application.Aplication" />
         <item itemvalue="JUnit.FieldTest.testOpenNoMineFieldNoMarked" />
       </list>
     </recent_temporary>
