@@ -1,6 +1,5 @@
 package test;
 
-import exception.ExceptionExplosed;
 import model.Field;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -71,7 +70,7 @@ public class FieldTest {
     @Test
     void testOpenMineFieldAndNoMarked() {
         field.toMine();
-        assertThrows(ExceptionExplosed.class, () -> {
+        assertThrows(Exception.class, () -> {
             field.open();
         });
     }

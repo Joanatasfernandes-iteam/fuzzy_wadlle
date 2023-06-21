@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
 
 public class Field {
     public Field(int line, int colun) {
@@ -17,15 +16,15 @@ public class Field {
     private boolean marked;
 
     private List<Field> neighbors = new ArrayList<>();
-    private List<CampoObservador> observadors = new ArrayList<>();
-    private List<BiConsumer<Field, CampoEvento>> consumers = new ArrayList<>();
+    private List<CampoObservador> observadores = new ArrayList<>();
+//    private List<BiConsumer<Field, CampoEvento>> consumers = new ArrayList<>();
 
     public void resgistrarObservador(CampoObservador observador) {
-        observadors.add(observador);
+        observadores.add(observador);
     }
 
     private void notificarObeservadores(CampoEvento evento) {
-        observadors.stream().forEach(o -> o.eventoOcorreu(this, evento));
+        observadores.stream().forEach(observer -> observer.eventoOcorreu(this, evento));
     }
 
     public boolean addNeigbor(Field neighbor) {
@@ -129,8 +128,8 @@ public class Field {
         return unraveled || protect;
     }
 
-    public long mineOfNeighbor() {
-        return neighbors.stream().filter(v -> v.mineField).count();
+    public int mineOfNeighbor() {
+        return (int) neighbors.stream().filter(v -> v.mineField).count();
     }
 
     public void restart() {

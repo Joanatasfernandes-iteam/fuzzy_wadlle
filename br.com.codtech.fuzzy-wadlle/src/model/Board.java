@@ -2,13 +2,23 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Board implements CampoObservador {
-    private int lines;
-    private int coluns;
-    private int mines;
-    private final List<Field> fields = new ArrayList<>();
+    private final int lines;
+    private final int coluns;
+    private final int mines;
+    private final List<Field> campos = new ArrayList<>();
+    private final List<Consumer<ResultadoEvento>> observadores = new ArrayList<>();
+
+    public int getLines() {
+        return lines;
+    }
+
+    public int getColuns() {
+        return coluns;
+    }
 
     public Board(int lines, int coluns, int mines) {
         this.lines = lines;
@@ -19,20 +29,27 @@ public class Board implements CampoObservador {
         sortedMines();
     }
 
+    public void paraCada(Consumer<Field> funcao) {
+        campos.forEach(funcao);
+    }
+
+    public void registrarObeservador(Consumer<ResultadoEvento> observador) {
+        observadores.add(observador);
+    }
+
+    private void notificarObeservadores(Boolean resultado) {
+        observadores.stream().forEach(observer -> observer.accept(new ResultadoEvento(resultado)));
+    }
+
     public void open(int line, int colun) {
-        try {
-            fields.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
-                    .findFirst()
-                    .ifPresent(Field::open);
-        } catch (Exception e) {
-            //FIXme
-            fields.forEach(field -> field.setOpen(true));
-            throw e;
-        }
+        campos.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
+                .findFirst()
+                .ifPresent(Field::open);
+
     }
 
     public void alternatMarked(int line, int colun) {
-        fields.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
+        campos.stream().filter(field -> field.getLine() == line && field.getColun() == colun)
                 .findFirst()
                 .ifPresent(Field::alternatMarked);
     }
@@ -42,24 +59,24 @@ public class Board implements CampoObservador {
         Predicate<Field> undermined = Field::isMineField;
 
         do {
-            int sorted = (int) (Math.random() * fields.size());
-            fields.get(sorted).toMine();
-            minesArmed = fields.stream().filter(undermined).count();
+            int sorted = (int) (Math.random() * campos.size());
+            campos.get(sorted).toMine();
+            minesArmed = campos.stream().filter(undermined).count();
         } while (minesArmed < mines);
     }
 
     public boolean objetiveSucces() {
-        return fields.stream().allMatch(f -> f.objetiveSucces());
+        return campos.stream().allMatch(f -> f.objetiveSucces());
     }
 
     public void restart() {
-        fields.stream().forEach(f -> f.restart());
+        campos.stream().forEach(f -> f.restart());
         sortedMines();
     }
 
     private void associetedNeighbord() {
-        for (Field fieldOne : fields) {
-            for (Field fieldTwo : fields) {
+        for (Field fieldOne : campos) {
+            for (Field fieldTwo : campos) {
                 fieldOne.addNeigbor(fieldTwo);
             }
         }
@@ -70,7 +87,7 @@ public class Board implements CampoObservador {
             for (int colun = 0; colun < coluns; colun++) {
                 Field campo = new Field(line, colun);
                 campo.resgistrarObservador(this);
-                fields.add(campo);
+                campos.add(campo);
             }
         }
     }
@@ -78,12 +95,18 @@ public class Board implements CampoObservador {
     @Override
     public void eventoOcorreu(Field campo, CampoEvento evento) {
         if (evento == CampoEvento.EXPLODIR) {
-            System.out.println("Perdeu....:(");
-        } else {
-            if (objetiveSucces()) {
-                System.out.println("Ganhou....:)");
-            }
+            mostraMinas();
+//            System.out.println("Perdeu....:("); passsou para o observer
+            notificarObeservadores(false);
+        } else if (objetiveSucces()) {
+//                System.out.println("Ganhou....:)");
+            notificarObeservadores(true);
         }
+    }
+
+    private void mostraMinas() {
+        campos.stream().filter(field -> field.isMineField())
+                .forEach(field -> field.setOpen(true));
     }
 
     /*public String toString() {
