@@ -1,3 +1,47 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+### Gradle ###
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+!**/actions/build/**
+!**/actions/docker/build**
+gen/
+
+### Eclipse ###
+*.ctxt
+.eclipse
+.settings
+.project
+.classpath
+.factorypath
+bin/
+
+
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode
+
+### OS Generated Files ###
+.DS_Store
+Thumbs.db
+*.orig
+*.tmp
+*.bak
+*.swp
+/.idea/
