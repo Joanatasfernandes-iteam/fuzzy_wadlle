@@ -136,6 +136,7 @@ public class Field {
         open = false;
         mineField = false;
         marked = false;
+        notificarObeservadores(CampoEvento.RESTART);
     }
 
  /*   public String toString() {

@@ -20,6 +20,7 @@ public class ButaoCampo extends JButton implements CampoObservador, MouseListene
     public ButaoCampo(Field campo) {
         this.campo = campo;
         setBackground(BG_PADRAO);
+        setOpaque(true);
         setBorder(BorderFactory.createBevelBorder(0));
 
         addMouseListener(this);
@@ -32,25 +33,46 @@ public class ButaoCampo extends JButton implements CampoObservador, MouseListene
             case ABRI -> aplicarEstiloAbrir();
             case MARCAR -> aplicarEstiloMarcar();
             case EXPLODIR -> aplicarEstiloExplodir();
-            default -> aplicarEstiloPadrao();
+            default -> {
+                aplicarEstiloPadrao();
+
+                SwingUtilities.invokeLater(() -> {
+                    repaint();
+                    validate();
+                });
+            }
         }
     }
 
     private void aplicarEstiloPadrao() {
-
+        setBorder(BorderFactory.createBevelBorder(0));
+        setBackground(BG_PADRAO);
+        setText("");
     }
 
     private void aplicarEstiloExplodir() {
+        setBackground(BG_EXPLODIR);
+        setForeground(Color.WHITE);
+        setText("x");
+        //setIcon(new ImageIcon("595582.png"));
 
     }
 
     private void aplicarEstiloMarcar() {
-
+        setBackground(BG_MARCAR);
+        setForeground(Color.BLACK);
+        setText("M");
     }
 
     private void aplicarEstiloAbrir() {
-        setBackground(BG_PADRAO);
+
         setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        if (campo.isMineField()) {
+            setBackground(BG_EXPLODIR);
+            return;
+        }
+
+        setBackground(BG_PADRAO);
 
         switch (campo.mineOfNeighbor()) {
             case 1:

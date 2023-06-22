@@ -105,7 +105,9 @@ public class Board implements CampoObservador {
     }
 
     private void mostraMinas() {
-        campos.stream().filter(field -> field.isMineField())
+        campos.stream()
+                .filter(field -> field.isMineField())
+                .filter(field -> !field.isMarked())
                 .forEach(field -> field.setOpen(true));
     }
 
